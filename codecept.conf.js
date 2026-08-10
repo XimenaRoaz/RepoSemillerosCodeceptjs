@@ -7,12 +7,20 @@ exports.config = {
     Playwright: {
       url: 'https://www.saucedemo.com/',
       show: true,
-      browser: 'chromium'
-    }
+      browser: 'chromium',
+      video: true,
+      pressKeyDelay: 100,
+      trace: true,
+      keepTraceForPassedTests: true,
+    },
+    PlaywrightVideoAllure: {
+        require: './utils/playwrightVideoAllure_helper'
+  },
   },
 
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    sauceDemoPage: './pages/sauceDemoPage.js'
   },
 
   gherkin: {
